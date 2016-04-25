@@ -94,17 +94,18 @@
     }
 
     function getdata(){
-  		// $.getJSON("http://cpre.kmutnb.ac.th/esl/share/get_meter_data.php", function(){
-      //
-      // })
-      // .done(function (json) {
-      //   data = json;
-  		// 	console.log(data[1]['energy']);
-      //   document.getElementById('meter1_power').innerHTML = "<p style='font-size:28px; text-align:center'>"+data[0]['energy']+" kWh</p>";
-      //   document.getElementById('meter2_power').innerHTML = "<p style='font-size:28px; text-align:center'>"+data[1]['energy']+" kWh</p>";
-      //   // draw();
-      // });
+  		$.getJSON("http://cpre.kmutnb.ac.th/esl/share/meter/get_meter_data.php", function(){
+
+      })
+      .done(function (json) {
+        data = json;
+  			console.log(data[1]['energy']);
+        document.getElementById('meter1_power').innerHTML = "<p style='font-size:28px; text-align:center'>"+data[0]['energy']+" kWh</p>";
+        document.getElementById('meter2_power').innerHTML = "<p style='font-size:28px; text-align:center'>"+data[1]['energy']+" kWh</p>";
+        // draw();
+      });
   	}
+    setInterval(30000, getdata());
   </script>
   <div class="app-container">
     <div class="row content-container">
@@ -291,7 +292,7 @@
   <!--<script type="text/javascript" src="../../js/app.js"></script>-->
   <script src="../flat-admin-bootstrap-templates-master/js/app.js" type="text/javascript"></script>
   <!--<scrsrc="../../ype="text/javascript" src="../../js/index.js"></script>-->
-  <!-- <script src="flat-admin-bootstrap-templates-master/js/index.js" type="text/javascript"></script> -->
+  <script src="flat-admin-bootstrap-templates-master/js/index.js" type="text/javascript"></script>
 </body>
 
 </html>
